@@ -6,6 +6,9 @@ import IconButton from '@material-ui/core/IconButton'
 import HomeIcon from '@material-ui/icons/Home'
 import Button from '@material-ui/core/Button'
 import auth from '../lib/auth-helper'
+import Badge from '@material-ui/core/Badge'
+import CartIcon from '@material-ui/icons/ShoppingCart'
+import cart from './../cart/cart-helper'
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 
@@ -49,6 +52,14 @@ export default function Menu(){
             <Button style={isActive(location, "/signin")}>Sign In
             </Button>
           </Link>
+          <Link to="/cart">
+          <Button style={isActive(history, "/cart")}>
+            Cart
+            <Badge invisible={false} color="secondary" badgeContent={cart.itemTotal()} style={{'marginLeft': '7px'}}>
+              <CartIcon />
+            </Badge>
+          </Button>
+        </Link>
           
         </span>)
       }
