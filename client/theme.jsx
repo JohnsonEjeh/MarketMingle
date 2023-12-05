@@ -13,7 +13,7 @@ contrastText: '#fff',
 },
 secondary: {
 light: '#ff79b0', 
-main: '#ff4081', 
+main: '#bef67a', 
 dark: '#c60055', 
 contrastText: '#000',
 },
