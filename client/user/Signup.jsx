@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
@@ -14,6 +15,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import {Link} from 'react-router-dom'
+import Logo from '../assets/images/logo.jpg'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -21,7 +23,8 @@ const useStyles = makeStyles(theme => ({
     margin: 'auto',
     textAlign: 'center',
     marginTop: theme.spacing(5),
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
+    
   },
   error: {
     verticalAlign: 'middle'
@@ -72,7 +75,14 @@ export default function Signup() {
     return (<div>
       <Card className={classes.card}>
         <CardContent>
-          <Typography variant="h6" className={classes.title} >
+        <CardMedia
+          component="img"
+          alt="Logo"
+          height="140"
+          image={Logo}
+          title="Logo"
+          />
+          <Typography variant="h5" className={classes.title} >
             Sign Up
           </Typography>
           <TextField id="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>

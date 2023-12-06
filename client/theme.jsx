@@ -21,6 +21,13 @@ contrastText: '#eeeded',
 openTitle: '#4758d6', 
 protectedTitle:'#ea3a3a' , 
 type: 'light'
-} 
+}, 
+overrides:{
+    MuiCard:{
+        root:{
+            backgroundColor: '#e1811f'
+        }
+    }
+}
 })
 export default theme
