@@ -6,10 +6,10 @@ useNextVariants: true,
 },
 palette: {
 primary: {
-light: '#5c67a3', 
-main: '#3f4771', 
-dark: '#2e355b', 
-contrastText: '#fff',
+light: '#4758d6', 
+main: '#e1811f', 
+dark: '#201c1c', 
+contrastText: '#eeeded',
 },
 secondary: {
 light: '#ff79b0', 
