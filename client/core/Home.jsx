@@ -32,39 +32,59 @@ import unicornbikeImg from './../assets/images/unicornbikeImg.jpg';
 import { Link } from 'react-router-dom';
    
 
-const useStyles = makeStyles(theme => ({
-  card: {
-    maxWidth: 600,
-    margin: 'auto',
-    marginTop: theme.spacing(5),
-  },
-  title: {
-    padding: theme.spacing(3, 2.5, 2),
-    color: theme.palette.openTitle,
-  },
-  media: {
-    minHeight: 400,
-  },
-}));
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    margin: 30,
+    
+  }
+})
 
-export default function Home(){ 
-const classes = useStyles()
-return (
-<Card className={classes.card}>
-   
-  <Typography variant="h6" className={classes.title}>Home Page</Typography>
-
-
-<CardMedia className={classes.media}
-image={unicornbikeImg} title="Unicorn Bicycle"/>
-<CardContent>
-<Typography variant="body2" component="p"> 
-Welcome to the MERN Skeleton home page.
-</Typography> 
-</CardContent>
-</Card> 
-)
+class Home extends Component {
+  state={
+    suggestionTitle: "Latest Products",
+    suggestions: [],
+    categories: []
+  }
+  componentDidMount = () => {
+    listLatest().then((data) => {
+      if (data.error) {
+        console.log(data.error)
+      } else {
+        this.setState({suggestions: data})
+      }
+    })
+    listCategories().then((data) => {
+      if (data.error) {
+        console.log(data.error)
+      } else {
+        this.setState({categories: data})
+      }
+    })
+  }
+  render() {
+    const {classes} = this.props
+    return (
+      <div className={classes.root}>
+        <Grid container spacing={24}>
+          <Grid item xs={8} sm={8}>
+            <Search categories={this.state.categories}/>
+            <Categories categories={this.state.categories}/>
+          </Grid>
+          <Grid item xs={4} sm={4}>
+            <Suggestions products={this.state.suggestions} title={this.state.suggestionTitle}/>
+          </Grid>
+        </Grid>
+      </div>
+    )
+  }
 }
+
+Home.propTypes = {
+  classes: PropTypes.object.isRequired
+}
+
+export default withStyles(styles)(Home)
 
 /*const MyComponent = () => {
   const classes = useStyles();
