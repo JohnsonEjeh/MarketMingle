@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import HomeIcon from '@material-ui/icons/Home'
 import Button from '@material-ui/core/Button'
-import auth from './../auth/auth-helper'
+import auth from '../auth/auth-helper'
 import {Link, withRouter} from 'react-router-dom'
 import CartIcon from '@material-ui/icons/ShoppingCart'
 import Badge from '@material-ui/core/Badge'
@@ -29,7 +29,7 @@ const isPartActive = (history, path) => {
 const Menu = withRouter(({history}) => (
   <AppBar position="static" >
     <Toolbar>
-    <ToolbarMedia>
+      <ToolbarMedia>
         <img src={Logo} alt="Logo" style={{height:'40px'}}/>
       </ToolbarMedia>
       <div>
@@ -52,7 +52,8 @@ const Menu = withRouter(({history}) => (
       </div>
       <div style={{'position':'absolute', 'right': '10px'}}><span style={{'float': 'right'}}>
       {
-        !auth.isAuthenticated() && (<span>
+        !auth.isAuthenticated() && (
+        <span>
           <Link to="/signup">
             <Button style={isActive(location, "/signup")}>Sign up
             </Button>
@@ -76,8 +77,11 @@ const Menu = withRouter(({history}) => (
             }}>Sign out</Button>
         </span>)
       }
+      </span>
+      </div>
+    
     </Toolbar>
   </AppBar>
-);
-};
+));
+
 
