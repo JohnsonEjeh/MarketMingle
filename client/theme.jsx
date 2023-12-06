@@ -8,7 +8,7 @@ palette: {
 
 primary: {
 light: '#4758d6', 
-main: '#ea3a3a', 
+main: '#e1811f', 
 dark: '#201c1c', 
 contrastText: '#eeeded',
 },
