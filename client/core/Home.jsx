@@ -27,9 +27,9 @@ import PropTypes from 'prop-types'
 import {withStyles} from '@material-ui/core/styles'
 import Grid from "@material-ui/core/Grid";
 import Suggestions from './../product/Suggestions'
-import {listLatest, listCategories} from './../product/api-product.js'
-import Search from './../product/Search'
-import Categories from './../product/Categories'
+import {listLatest, listCategories} from '../product/api-products'
+import Search from '../product/Search'
+import Categories from '../product/Categories'
 
 const styles = theme => ({
   root: {

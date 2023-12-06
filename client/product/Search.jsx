@@ -7,7 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import SearchIcon from '@material-ui/icons/Search'
-import {list} from './api-product.js'
+import {list} from './api-products.js'
 import Products from './Products'
 
 const useStyles = makeStyles(theme => ({

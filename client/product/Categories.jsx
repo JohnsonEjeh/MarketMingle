@@ -7,7 +7,7 @@ import Divider from '@material-ui/core/Divider'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import Icon from '@material-ui/core/Icon'
-import {list} from './api-product.js'
+import {list} from './api-products.js'
 import Products from './Products'
 
 const useStyles = makeStyles(theme => ({
