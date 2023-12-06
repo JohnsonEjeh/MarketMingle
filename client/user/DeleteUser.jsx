@@ -10,7 +10,7 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import auth from '../lib/auth-helper.js'
 import {remove} from './api-user.js'
-import {Navigate} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 export default function DeleteUser(props) {
   const [open, setOpen] = useState(false)

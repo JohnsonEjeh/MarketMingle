@@ -17,7 +17,7 @@ import Divider from '@material-ui/core/Divider'
 import DeleteUser from './DeleteUser'
 import auth from '../lib/auth-helper.js'
 import {read} from './api-user.js'
-import {useLocation, Navigate, Link} from 'react-router-dom'
+import {useLocation, Redirect, Link} from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({

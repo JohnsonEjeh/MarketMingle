@@ -9,7 +9,7 @@ import Icon from '@material-ui/core/Icon'
 import { makeStyles } from '@material-ui/core/styles'
 import auth from '../lib/auth-helper.js'
 import {read, update} from './api-user.js'
-import {Navigate} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({

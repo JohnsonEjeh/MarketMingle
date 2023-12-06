@@ -1,10 +1,11 @@
 import { createTheme } from '@material-ui/core/styles' 
-import { pink } from '@material-ui/core/colors'
+
 const theme = createTheme({ 
 typography: {
-useNextVariants: true, 
+fontFamily: 'Poppins, sans-serif', 
 },
 palette: {
+
 primary: {
 light: '#4758d6', 
 main: '#e1811f', 
@@ -12,14 +13,21 @@ dark: '#201c1c',
 contrastText: '#eeeded',
 },
 secondary: {
-light: '#ff79b0', 
-main: '#ff4081', 
-dark: '#c60055', 
-contrastText: '#000',
+light: '#e1811f', 
+main: '#4758d6', 
+dark: '#201c1c', 
+contrastText: '#eeeded',
 },
-openTitle: '#3f4771', 
-protectedTitle: pink['400'], 
+openTitle: '#4758d6', 
+protectedTitle:'#ea3a3a' , 
 type: 'light'
-} 
+}, 
+overrides:{
+    MuiCard:{
+        root:{
+            backgroundColor: '#e1811f'
+        }
+    }
+}
 })
 export default theme
