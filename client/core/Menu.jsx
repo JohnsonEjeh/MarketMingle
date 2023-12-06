@@ -10,25 +10,28 @@ import {Link, withRouter} from 'react-router-dom'
 import CartIcon from '@material-ui/icons/ShoppingCart'
 import Badge from '@material-ui/core/Badge'
 import cart from './../cart/cart-helper'
+import ToolbarMedia from '@material-ui/core/Toolbar'
+import Logo from '../assets/images/logo.jpg'
+
 
 const isActive = (history, path) => {
   if (history.location.pathname == path)
-    return {color: '#bef67a'}
+    return {color: '#4758d6'}
   else
-    return {color: 'black'}
+    return {color: '#201c1c'}
 }
 const isPartActive = (history, path) => {
   if (history.location.pathname.includes(path))
     return {color: '#bef67a'}
   else
-    return {color: 'black'}
+    return {color: '201c1c'}
 }
 const Menu = withRouter(({history}) => (
-  <AppBar position="static" style={{ backgroundColor: '#9E9FA5', color: 'black'}}>
+  <AppBar position="static" >
     <Toolbar>
-      <Typography variant="h6" color="inherit">
-        MERN Marketplace
-      </Typography>
+    <ToolbarMedia>
+        <img src={Logo} alt="Logo" style={{height:'40px'}}/>
+      </ToolbarMedia>
       <div>
         <Link to="/">
           <IconButton aria-label="Home" style={isActive(history, "/")}>
