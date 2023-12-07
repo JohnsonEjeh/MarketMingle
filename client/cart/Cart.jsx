@@ -6,6 +6,7 @@ import {StripeProvider} from 'react-stripe-elements'
 import config from '../../config/config'
 import Checkout from './Checkout'
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
