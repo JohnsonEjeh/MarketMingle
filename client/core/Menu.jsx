@@ -10,28 +10,26 @@ import {Link, withRouter} from 'react-router-dom'
 import CartIcon from '@material-ui/icons/ShoppingCart'
 import Badge from '@material-ui/core/Badge'
 import cart from './../cart/cart-helper'
-import ToolbarMedia from '@material-ui/core/Toolbar'
-import Logo from '../assets/images/logo.jpg'
-
+import Logo from '../assets/images/mmLogo.png'
 
 const isActive = (history, path) => {
   if (history.location.pathname == path)
-    return {color: '#4758d6'}
+    return {color: '#bef67a'}
   else
-    return {color: '#201c1c'}
+    return {color: 'black'}
 }
 const isPartActive = (history, path) => {
   if (history.location.pathname.includes(path))
     return {color: '#bef67a'}
   else
-    return {color: '201c1c'}
+    return {color: 'black'}
 }
 const Menu = withRouter(({history}) => (
-  <AppBar position="static" >
+  <AppBar position="static">
     <Toolbar>
-    <ToolbarMedia>
-        <img src={Logo} alt="Logo" style={{height:'40px'}}/>
-      </ToolbarMedia>
+      <Typography variant="h6" color="inherit">
+        <img src={Logo} alt="Logo" style={{height:'60px'}}/>
+      </Typography>
       <div>
         <Link to="/">
           <IconButton aria-label="Home" style={isActive(history, "/")}>
@@ -54,30 +52,29 @@ const Menu = withRouter(({history}) => (
       {
         !auth.isAuthenticated() && (<span>
           <Link to="/signup">
-            <Button style={isActive(location, "/signup")}>Sign up
+            <Button style={isActive(history, "/signup")}>Sign up
             </Button>
           </Link>
           <Link to="/signin">
-            <Button style={isActive(location, "/signin")}>Sign In
+            <Button style={isActive(history, "/signin")}>Sign In
             </Button>
           </Link>
         </span>)
       }
       {
         auth.isAuthenticated() && (<span>
-          <Link to={"/api/products" + auth.isAuthenticated().user_id}>
-            <Button style={isActive(location, "/api/products")}>My Cart</Button>
-          </Link>
+          {auth.isAuthenticated().user.seller && (<Link to="/seller/shops"><Button style={isPartActive(history, "/seller/")}>My Shops</Button></Link>)}
           <Link to={"/user/" + auth.isAuthenticated().user._id}>
-            <Button style={isActive(location, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
+            <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
           </Link>
           <Button color="inherit" onClick={() => {
-               auth.clearJWT(() => navigate('/'));
+              auth.clearJWT(() => history.push('/'))
             }}>Sign out</Button>
         </span>)
       }
+      </span></div>
     </Toolbar>
   </AppBar>
-);
-};
+))
 
+export default Menu

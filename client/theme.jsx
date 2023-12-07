@@ -1,5 +1,5 @@
 import { createTheme } from '@material-ui/core/styles' 
-
+import { pink } from '@material-ui/core/colors'
 const theme = createTheme({ 
 typography: {
 fontFamily: 'Poppins, sans-serif', 
@@ -7,25 +7,25 @@ fontFamily: 'Poppins, sans-serif',
 palette: {
 
 primary: {
-light: '#4758d6', 
-main: '#e1811f', 
-dark: '#201c1c', 
+light: '#B3A492', 
+main: '#A9A9A9', 
+dark: '#2E4374', 
 contrastText: '#eeeded',
 },
 secondary: {
-light: '#e1811f', 
-main: '#4758d6', 
-dark: '#201c1c', 
-contrastText: '#eeeded',
+    light: '#B3A492', 
+    main: '#A9A9A9', 
+    dark: '#2E4374', 
+    contrastText: '#eeeded',
 },
-openTitle: '#4758d6', 
-protectedTitle:'#ea3a3a' , 
+openTitle: 'black', 
+protectedTitle:'black' , 
 type: 'light'
 }, 
 overrides:{
     MuiCard:{
         root:{
-            backgroundColor: '#e1811f'
+            backgroundColor: '#A9A9A9'
         }
     }
 }
