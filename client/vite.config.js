@@ -21,7 +21,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: "https://market-mingle-api.onrender.com",
+        target: `http://localhost:${PORT}`,
         changeOrigin: true,
       },
     },
